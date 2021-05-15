@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>mbahArip :: Link Shortener</title>
+
+		<!-- Meta -->
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+
+		<!-- css -->
+		<link rel="stylesheet" href="assets/style/link-mbaharip.css" />
+
+		<!-- webfont -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+		/>
+
+        <!-- Script -->
+        <script src="https://cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+
+	</head>
+	<body onload="checkLink()">
+		<section id="header">
+			<div class="headerLogo">
+				<img src="assets/project/icon.svg" alt="" class="logo filter__background" />
+				<a href="../link.mbaharip.me/" class="title">link.mbaharip.me</a>
+			</div>
+			<div class="status">
+				<h1>Status : </h1>
+				<h2 class="statusChange">Ready</h2>
+			</div>
+		</section>
+
+		<section id="generator">
+			<div class="input">
+				<div class="desc">
+					<h1>Input Link</h1>
+				</div>
+                <h3>Full Link</h3>
+				<input name="inputField" id="inputField" placeholder="Input link here"></input>
+                <h3>Secret Key</h3>
+				<input name="secretField" id="secretField" placeholder="You will need this for opening the link."></input>
+				<span>*You can leave it blank if you don't need any password.</span>
+				<h3>Alias</h3>
+				<input name="aliasField" id="aliasField" maxlength="15" placeholder="Please keep it short! (max = 15 character)"></input>
+				<span>*It will be randomized if you don't specify alias.</span>
+				<div id="btnSubmit" class="btn">Short it!</div>
+				
+			</div>
+			<div class="output">
+				<div class="desc">
+					<h1>Output Link</h1>
+				</div>
+                <h3>Short Link</h3>
+				<input name="outputField" id="outputField" readonly placeholder="Output"></input>
+				<div class="includeSecret">
+					<input type="checkbox" name="outputCheck" id="outputCheck" disabled>
+					<span>Include secret key</span>
+				</div>
+				<div id="btnCopy" class="btn">Copy</div>
+			</div>
+		</section>
+
+		<section id="redirect">
+			<div class="info">
+				<img src="assets/project/icon.svg" alt="" />
+				<span>Initializing...</span>
+			</div>
+		</section>
+        <script src="assets/js/app.js"></script>
+	</body>
+</html>
