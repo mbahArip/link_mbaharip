@@ -58,7 +58,7 @@ async function checkLink() {
 		if (window.location.search.split('?').length <= 1) {
 			return;
 		}
-		alias = window.location.search.split('?')[1];
+		alias = window.location.search.split('?')[1].split('?')[0];
 		fs.collection('shortlinkAlias')
 			.doc(alias)
 			.get()
