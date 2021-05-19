@@ -47,6 +47,9 @@ async function gateWay() {
 	} else {
 		await sleep(500);
 		hideCover();
+		await sleep(750);
+		document.querySelectorAll('.content')[0].style.opacity = '1';
+		document.querySelectorAll('.content')[1].style.opacity = '1';
 	}
 }
 

@@ -51,7 +51,7 @@ section#redirect div.info {
 }
 
 section#redirect div.info img {
-  width: 5vw;
+  width: 10rem;
   -o-object-fit: contain;
      object-fit: contain;
   -webkit-animation: animation 1s linear infinite alternate;
@@ -89,9 +89,7 @@ section#header {
   background: #171717;
   color: #fafafa;
   border-bottom: 2px solid #fafafa;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -102,6 +100,7 @@ section#header {
 }
 
 section#header div.headerLogo {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,7 +113,8 @@ section#header div.headerLogo {
 }
 
 section#header div.headerLogo img.logo {
-  height: 10vh;
+  height: 10vw;
+  max-height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   padding: 0.5rem;
@@ -122,7 +122,7 @@ section#header div.headerLogo img.logo {
 
 section#header div.headerLogo a.title {
   font-size: 2rem;
-  margin-left: 2rem;
+  margin-left: 1rem;
   color: #fafafa;
   font-weight: bold;
   text-decoration: none;
@@ -255,6 +255,12 @@ section#generator div.output > div.includeSecret {
 
 section#generator div.output > div.includeSecret input[type='checkbox'] {
   width: auto;
+}
+
+section.content {
+  opacity: 0;
+  -webkit-transition: 1.5s opacity;
+  transition: 1.5s opacity;
 }
 
 h1#notif {
